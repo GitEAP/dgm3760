@@ -14,7 +14,7 @@ require_once('connectvars.php');
 	<ul>
 		<li class="active"><a href="index.php">View</a></li>
 		<li><a href="add.php">Add</a></li>
-		<li><a href="delete.php">Delete</a></li>
+		<li><a href="admin.php">Admin</a></li>
 	</ul>
 </div>
 
@@ -26,7 +26,7 @@ require_once('connectvars.php');
 $dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ('connection failed');
 
 //Build query
-$query = "SELECT * FROM hotel_simple WHERE approve=1 ORDER BY name";
+$query = "SELECT * FROM hotel_simple WHERE approved=1 ORDER BY name";
 
 //talk to database
 $result = mysqli_query($dbconnection, $query) or die('Query failed');
