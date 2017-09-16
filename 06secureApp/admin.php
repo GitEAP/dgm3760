@@ -28,19 +28,23 @@ $result = mysqli_query($dbconnection, $query) or die('Query failed');
 <h1>Delete or Approve Hotels</h1>
 
 <?php
-while ($row = mysqli_fetch_array($result)) {
-		echo '<p class="adminListItem">';
-		echo $row['name'] . '<br>';
-		echo $row['location'] . '<br>';
-		echo 'Phone: ' . $row['phone'] . '<br>';
-		echo 'Rating: ' . $row['rating'] . '<br>';
-		echo 'Date added: ' . $row['date'];
-		echo '<br>';
-		echo '<a href="approve.php?id=' . $row['id'] . '" class="approveButton">Approve</a>';
-		echo '<a href="delete.php?id=' . $row['id'] . '" class="deleteButton">Delete</a>';
-		echo '</p>';
-	}
-	
+//check to see if there are any entries that need to be approved
+if (mysqli_num_rows($result) == 0) {
+	echo '<h2>All hotels have been approved!</h2>';
+} else {
+	while ($row = mysqli_fetch_array($result)) {
+			echo '<p class="adminListItem">';
+			echo $row['name'] . '<br>';
+			echo $row['location'] . '<br>';
+			echo 'Phone: ' . $row['phone'] . '<br>';
+			echo 'Rating: ' . $row['rating'] . '<br>';
+			echo 'Date added: ' . $row['date'];
+			echo '<br>';
+			echo '<a href="approve.php?id=' . $row['id'] . '" class="approveButton">Approve</a>';
+			echo '<a href="delete.php?id=' . $row['id'] . '" class="deleteButton">Delete</a>';
+			echo '</p>';
+		}//end of while loop
+	}//end of if else statement
 mysqli_close($dbconnection);
 ?>
 
