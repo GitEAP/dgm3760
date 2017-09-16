@@ -1,3 +1,10 @@
+//.linkButton goes inside of containerContent. Used for regular links not in text.
+//.cancelButton goes inside of contactForm. Used for cancel button links.
+//.backButton goes inside of detail conatiner. Used for going back from detail container.
+//
+//.deleteButton goes inside of containerContent. Button used for delete option.
+//.approveButton goes inside of containerContent. Button used for approve option.
+
 .containerContent {
 	padding: 0 2% 25px 2%;
 	min-height: 600px;
@@ -104,9 +111,12 @@
 				background-color: $secondaryColor;
 				color: $brownColorlight;
 			}
-		}
+		}//end of cancel button
 		
 	}//end of contact form
+	
+	
+	
 	
 	//deleteList adds spacing between each list item.
 	.adminList {
@@ -157,6 +167,9 @@
 	.detailPicContainer {
 		float: left;
 	}
+	.deleteButton {}
+	.approveButton {}
+	
 	
 }//end of content
 @media screen and (min-width: 566px) { 
