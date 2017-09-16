@@ -24,7 +24,7 @@ $result = mysqli_query($dbconnection, $query) or die('Query failed');
 	</ul>
 </div>
 
-<main class="default">
+<main class="default clearfix">
 	<h1>View Hotels</h1>
 	
 	<?php
