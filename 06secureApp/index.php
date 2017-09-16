@@ -1,5 +1,11 @@
 <?php
 require_once('connectvars.php');
+//Build db connection
+$dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ('connection failed');
+//Build query
+$query = "SELECT * FROM hotel_simple WHERE approved=1 ORDER BY date";
+//talk to database
+$result = mysqli_query($dbconnection, $query) or die('Query failed');
 ?>
 
 <?php include_once('htmlHead.php'); ?>
@@ -22,29 +28,18 @@ require_once('connectvars.php');
 	<h1>View Hotels</h1>
 	
 	<?php
-	//Build db connection
-$dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ('connection failed');
-
-//Build query
-$query = "SELECT * FROM hotel_simple WHERE approved=1 ORDER BY name";
-
-//talk to database
-$result = mysqli_query($dbconnection, $query) or die('Query failed');
-
 //Display table data
 while ($row = mysqli_fetch_array($result)) {
 	//Checks to see the images exists or else it displays a default images.
-	if (file_exists('images/' . $row['photo']) && $row['photo'] <> '') {
-	$photoPath = 'images/' . $row['photo'];
+	if (file_exists('../05manageRecords/images/' . $row['photo']) && $row['photo'] <> '') {
+	$photoPath = '../05manageRecords/images/' . $row['photo'];
 	} else {
 		$photoPath = 'images/noimagefound.jpg';
 	}
-	
 	//Displays the information
 	echo '<div class="detailPicContainer">';
 	echo '<img src="' . $photoPath . '" alt="Photo of Hotel">';
 	echo '</div>';
-	
 	
 	echo '<div class="detailContainer">';
 	echo '<h2>' . $row['name'] . '</h2>';
@@ -53,7 +48,6 @@ while ($row = mysqli_fetch_array($result)) {
 	echo '<p>' . $row['rating'] . '</p>';
 	echo '<a href="index.php" class="backButton">Back</a>';
 	echo '</div>';
-	
 }//end of while loop
 	
 mysqli_close($dbconnection);
