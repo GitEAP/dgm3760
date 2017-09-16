@@ -1,0 +1,61 @@
+$headFont: 'Francois One', sans-serif;
+$bodyFont: 'Mukta Mahee', sans-serif;
+
+$primaryColor: #659dbd;
+$secondaryColor: #8d8741;
+$brownColor: #daad86;
+$brownColorDark: #bc986a;
+$brownColorlight: #fbeec1;
+
+//Global styles
+body {
+	font-family: $bodyFont;
+	background: #ffffff;
+	background: -moz-radial-gradient(center, ellipse cover, #ffffff 40%, #ededed 100%);
+	background: -webkit-radial-gradient(center, ellipse cover, #ffffff 40%,#ededed 100%);
+	background: radial-gradient(ellipse at center, #ffffff 40%,#ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 );
+}
+//Mixin's
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin box-shadow($hShadow, $vShadow, $blur, $color) {
+	-webkit-box-shadow: $hShadow $vShadow $blur $color;
+	-moz-box-shadow: $hShadow $vShadow $blur $color;
+	-ms-box-shadow: $hShadow $vShadow $blur $color;
+	box-shadow: $hShadow $vShadow $blur $color;
+}
+@mixin text-shadow($hShadow, $vShadow, $blur, $color) {
+	-webkit-text-shadow: $hShadow $vShadow $blur $color;
+	-moz-text-shadow: $hShadow $vShadow $blur $color;
+	-ms-text-shadow: $hShadow $vShadow $blur $color;
+	text-shadow: $hShadow $vShadow $blur $color;
+}
+
+//breakpoints (progressive enhancement)
+/* 760px (size we want) / 16 (16px = 1em) = 47.5em  For Tablet*/
+$tabletWidth: 47.5em;
+/* 1140px (size we want) / 16 (16px = 1em) = 71.25em For Desktop*/
+$desktopWidth: 71.25em;
+
+// @include breakpoint(desktop){}
+@mixin breakpoint($point) {
+	@if $point == desktop {
+		@media (min-width: $desktopWidth) { @content ; }
+	}
+	@else if $point == tablet {
+		@media (min-width: $tabletWidth) { @content ; }
+	}
+}
+
+/*----- Clearfix -----*/
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+

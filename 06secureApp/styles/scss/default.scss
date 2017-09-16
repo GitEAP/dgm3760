@@ -1,0 +1,31 @@
+.default {
+	padding: 0 2% 25px 2%;
+	min-height: 600px;
+	h1 {
+		font-size: 1.8em;
+		color: $primaryColor;
+		padding: 20px 0;
+	}
+	p {
+		font-size: 1em;
+		padding: 1.4em 0;
+	}
+	
+	a {
+		text-decoration: none;
+		color: $secondaryColor;
+		transition: all .5s ease;
+		
+		&:hover {
+			text-decoration: overline;
+			color: $primaryColor;
+		}
+	}
+}
+
+@media screen and (min-width: 566px) { 
+	.default {
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+}

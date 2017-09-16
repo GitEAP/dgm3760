@@ -1,0 +1,73 @@
+.headerWrapper {
+	background-image: url(../assets/frogs.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 400px;
+	background-position: center;
+	font-family: $headFont;
+	h1 {
+		padding-top: 150px;
+		font-size: 3em;
+		text-align: center;
+		color: $primaryColor;
+		@include text-shadow(0px, 0px, 3px, #fff);
+	}
+}
+.nav {
+		width: 100%;
+		background-color: $brownColorDark;
+	ul {}
+	li {
+		padding: .6em;
+		text-align: center;
+	}
+	a {
+		text-decoration: none;
+		font-size: 1.45em;
+		color: #fff;
+	}
+	.active  {
+		background-color: $secondaryColor;
+		a {
+			color: $brownColorlight;
+		}
+	}
+}
+@media screen and (min-width: 566px) {
+	.headerWrapper {
+		height: 250px;
+		h1 {
+			padding-top: 50px;
+		}
+	}
+	.nav {
+		width: 100%;//adjust when adding or removing anchors on main nav.
+		margin-left: auto;
+		margin-right: auto;
+		clear: both;
+		ul {
+			display: block;
+			width: 200px;
+			margin: 0 auto;
+			background-color: red;
+		}
+		li {
+			float: left;
+			padding: .5em;
+			transition: background-color .4s linear;
+			border-right: $brownColor solid 1px;
+			display: block;
+			&:hover {
+				background-color: $secondaryColor;
+				a {
+					color: $brownColorlight;
+				}
+			}
+		}
+		a {
+			display: block;
+			font-size: 1.3em;
+			transition: color .4s linear;
+	}
+	}//end of .nav
+}//end of media query

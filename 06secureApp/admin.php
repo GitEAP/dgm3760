@@ -28,29 +28,21 @@ $result = mysqli_query($dbconnection, $query) or die('Query failed');
 	</ul>
 </div>
 
-<main class="ContentContact">
-<h1>Delete Hotel</h1>
+<main class="containerContent">
+<h1>Delete or Approve Hotels</h1>
 
 <?php
-	
 while ($row = mysqli_fetch_array($result)) {
-	echo '<p class="deleteList">';
+	echo '<p class="adminList">';
 	echo $row['name'] . ' - ' . $row['location'];
-	echo '<a href="deleteconfirm.php?id=' . $row['id'] . '" class="linkButton">delete</a>';
+	echo '<a href="approve.php?id=' . $row['id'] . '" class="linkButton">Approve</a>';
+	echo '<a href="delete.php?id=' . $row['id'] . '" class="linkButton">Delete</a>';
 	echo '</p>';
 }
 	
 mysqli_close($dbconnection);
 ?>
 
-
-
 </main>
 
-
-<footer>
-	<p>&copy; 2017 &bull; Erick Perez &bull; Built for DGM 3760 Web Languages 2</p>
-</footer>
-
-</body>
-</html>
+<?php include_once('footer.php'); ?>

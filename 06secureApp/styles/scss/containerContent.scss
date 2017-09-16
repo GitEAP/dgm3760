@@ -1,0 +1,197 @@
+.containerContent {
+	padding: 0 2% 25px 2%;
+	min-height: 600px;
+	h1 {
+		font-size: 1.8em;
+		color: $primaryColor;
+		padding: 40px 0 20px 0;
+	}
+	a.linkButton {
+		text-decoration: none;
+		color: $secondaryColor;
+		margin: 1em 0;
+		padding: .75em;
+		text-align: center;
+		width: 45%;
+		display: block;
+		border: 1px solid $secondaryColor;
+		@include border-radius(15px);
+		transition: color .75s ease, border-color .75s ease, background-color .75s ease;
+		
+		&:hover {
+			color: $brownColorlight;
+			border-color: $primaryColor;
+			background-color: $primaryColor;
+		}
+	}//end of a linkbutton
+	hr {
+		height: 1px;
+		color: $primaryColor;
+	}
+	.contactForm{
+		padding: 0 4%;
+		margin-bottom: 2em;
+		fieldset {
+			padding: .5em 0;
+		}
+		legend {
+			color: $secondaryColor;
+			padding: .25em 0 0 0;
+			font-size: 1.25em;
+		}
+		label {
+			margin-left: 1.5em;
+			display: block;
+			&.messageLabel {
+				margin-top: .50em;
+			}
+		}
+		span {
+			font-size: .8em;
+			&.formTitle {
+				font-size: 1em;
+				display: block;
+				margin: 1em 0 .5em 1.5em;
+			}
+		}
+		input {
+			
+			&.userInput {
+				display: block;	
+				margin: .25em .25em 1em 0;
+				width: 90%;
+				padding: .75em;
+			}
+			&.submitbutton {
+				display: block;
+				border: $secondaryColor 1px solid;
+				padding: .75em;
+				background: none;
+				@include border-radius(20px);
+				color: $primaryColor;
+				font-size: .75em;
+				margin: .75em 0;
+				transition: color .75s ease, background-color .75s ease;
+				&:hover {
+					background-color: $secondaryColor;
+					color: $brownColorlight;
+				}
+			}
+		}//end of input
+		.contactOptions {
+			margin-left: 10px;
+		}
+		.message {
+			display: block;
+			width: 90%;
+			height: 100px;
+			margin-top: .2em;
+			border: 1px solid #E3E3E3;
+			padding: .75em;
+		}
+
+		
+		.cancelButton {
+			color: $brownColor;
+			border: $secondaryColor 1px solid;
+			@include border-radius(15px);
+			text-decoration: none;
+			padding: .35em;
+			font-size: 1em;
+			float: left;
+			transition: background-color .75s ease, color .75s ease;
+			&:hover {
+				background-color: $secondaryColor;
+				color: $brownColorlight;
+			}
+		}
+		
+	}//end of contact form
+	
+	//deleteList adds spacing between each list item.
+	.adminList {
+		margin-bottom: 3em;
+	}
+	.deleteConfirmation {
+		padding: .25em;
+		h2 {
+			font-size: 1.5em;
+		}
+		p {
+			font-size: 1.25em;
+		}
+	}//end of deleteconfirmation
+	
+	.detailContainer {
+		float: left;
+		width: 100%;
+		display: inline-block;
+		
+		h2 {
+			font-size: 1.5em;
+			color: $secondaryColor;
+		}
+		p {
+			font-size: 1.5em;
+			color: $secondaryColor;
+		}
+		.backButton {
+			text-decoration: none;
+			color: $secondaryColor;
+			margin: 1em 0;
+			padding: .75em;
+			text-align: center;
+			width: 45%;
+			display: block;
+			border: 1px solid $secondaryColor;
+			@include border-radius(15px);
+			transition: color .75s ease, border-color .75s ease, background-color .75s ease;
+
+			&:hover {
+				color: $brownColorlight;
+				border-color: $primaryColor;
+				background-color: $primaryColor;
+			}
+		}
+	}
+	.detailPicContainer {
+		float: left;
+	}
+	
+}//end of content
+@media screen and (min-width: 566px) { 
+	.containerContent {
+		max-width: 1140px;
+		margin-left: auto;
+		margin-right: auto;
+		h1 {
+			padding-top: 20px;
+		}
+		a.linkButton {
+			width: 15%;
+		}
+		.contactForm{
+			input {
+				&.userInput {
+					width: 60%;
+				}
+			}
+			.message {
+				width: 60%;
+			}
+		}//end of contact form
+		.detailContainer {
+			width: 50%;
+			padding-left: 1em;
+			h2 {
+				font-size: 2em;
+			}
+			p {
+				font-size: 2em;
+			}
+			.backButton {
+				width: 20%;
+			}
+		}
+	}//end of content contact
+}
