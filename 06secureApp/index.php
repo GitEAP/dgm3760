@@ -24,7 +24,7 @@ $result = mysqli_query($dbconnection, $query) or die('Query failed');
 	</ul>
 </div>
 
-<main class="default clearfix">
+<main class="containerContent clearfix">
 	<h1>View Hotels</h1>
 	
 	<?php
@@ -37,6 +37,7 @@ while ($row = mysqli_fetch_array($result)) {
 		$photoPath = 'images/noimagefound.jpg';
 	}
 	//Displays the information
+	echo '<div class="clearfix">';
 	echo '<div class="detailPicContainer">';
 	echo '<img src="' . $photoPath . '" alt="Photo of Hotel">';
 	echo '</div>';
@@ -46,7 +47,7 @@ while ($row = mysqli_fetch_array($result)) {
 	echo '<p>' . $row['location'] . '</p>';
 	echo '<p>' . $row['phone'] . '</p>';
 	echo '<p>' . $row['rating'] . '</p>';
-	echo '<a href="index.php" class="backButton">Back</a>';
+	echo '</div>';
 	echo '</div>';
 }//end of while loop
 	

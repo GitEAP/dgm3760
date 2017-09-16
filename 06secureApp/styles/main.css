@@ -297,7 +297,8 @@ footer {
         border-color: #659dbd;
         background-color: #659dbd; }
   .containerContent .detailPicContainer {
-    float: left; }
+    float: left;
+    margin-bottom: 1.75em; }
   .containerContent .approveButton, .containerContent .deleteButton {
     text-decoration: none;
     display: inline-block;

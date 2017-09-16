@@ -121,7 +121,7 @@
 			</label>
 		</fieldset>
 	
-	<input class="submitbutton" name="submitbutton" value="Add Hotel" type="submit">
+	<input class="submitbutton" name="submit" value="Add Hotel" type="submit">
 	</form>
 	
 		<?php
