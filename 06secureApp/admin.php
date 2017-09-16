@@ -1,4 +1,5 @@
 <?php
+require_once('authorize.php');
 require_once('connectvars.php');
 //Build db connection
 $dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ('connection failed');
