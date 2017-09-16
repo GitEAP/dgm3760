@@ -12,5 +12,4 @@ $result = mysqli_query($dbconnection, $query) or die('Query failed');
 
 //Return to the admin page
 header('Location: admin.php');
-
 ?>
