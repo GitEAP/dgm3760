@@ -1,0 +1,102 @@
+.mainContent {
+	max-width: $desktopWidth;
+	margin: 0 auto;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+.mainForm {
+	border: $accentColor 1px solid;
+	@include box-shadow(0px, 0px, 10px, $accentColor);
+	width: 100%;
+	background-color: rgba(0,0,0,.75);
+	background-image: url(../assets/clay-bg-small.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 10px 2%;
+	min-height: 350px;
+	.inputTitle {
+		margin-bottom: 5px;
+		display: block;
+	}
+	.userInput {
+		display: block;
+		padding: .25em;
+		width: 100%;
+		margin-bottom: 20px;	
+	}
+	label {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		width: 100%;
+	}
+	legend {
+		font-size: 1.5em;
+		padding-bottom: 20px;
+	}
+	%adminButtons {
+		text-decoration: none;
+		display: inline-block;
+		border: $accentColor 1px solid;
+		font-size: 1em;
+		padding: .4em;
+		margin-top: 1em;
+		margin-bottom: 1.75em;
+		@include border-radius(5px);
+		color: $accentColor;
+		transition: background-color .75s ease, color .75s ease;
+	}
+	.approveButton {
+		@extend %adminButtons;
+		background-color: $secondaryColor;
+		border-color: $secondaryColor;
+		&:hover {
+			background-color: lighten($secondaryColor, 10%);
+		}
+	}
+	.deleteButton {
+		@extend %adminButtons;
+		margin-left: 10px;
+		background-color: $warningColor;
+		border-color: $warningColor;
+		&:hover {
+			background-color: darken($warningColor, 10%);
+
+		}
+	}
+	.submitContainer{
+		width: 100%;
+		display: block;
+	}
+	.submitButton {
+		@extend %adminButtons;
+		&:hover {
+			background-color: $thirdColor;
+			color: $primaryColor;
+		}
+	}
+}//end of content
+@include breakpoint(tablet){
+.mainForm {
+	width: 60%;
+	margin: 0 auto;
+	label {
+		width: 60%;
+	}
+	.submitContainer{
+		width: 60%;
+		margin: 0 auto;
+	}
+}
+}//end of tablet
+@include breakpoint(desktop){
+	.mainContent {
+		padding: 0;
+	}
+.mainForm {
+	width: 50%;
+
+}
+	
+}//end of tablet

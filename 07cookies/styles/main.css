@@ -1,0 +1,209 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* My Reset Styles */
+/*-----Prevents iPhone from resizing in landscape mode -----*/
+html {
+  -webkit-text-size-adjust: none; }
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* End of Reset*/
+/* 760px (size we want) / 16 (16px = 1em) = 47.5em  For Tablet*/
+/* 1140px (size we want) / 16 (16px = 1em) = 71.25em For Desktop*/
+/*----- Clearfix -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.headerWrapper {
+  text-align: center;
+  font-size: 3em;
+  color: #f6ebd9;
+  font-family: "Courgette", cursive;
+  padding-top: .2em; }
+
+.nav {
+  font-family: "Courgette", cursive; }
+  .nav ul {
+    display: block;
+    text-align: center;
+    padding-top: 1em;
+    width: 100%;
+    margin-bottom: 20px; }
+  .nav li {
+    display: inline-block;
+    margin: .5em; }
+  .nav .active a {
+    color: #5a3628;
+    border-color: #615d5e;
+    background-color: #f6ebd9; }
+  .nav a {
+    display: block;
+    text-decoration: none;
+    color: #f6ebd9;
+    font-size: 1.6em;
+    padding: .4em;
+    border: #f6ebd9 1px solid;
+    transition: background-color .5s ease, color .5s ease; }
+    .nav a:hover {
+      background-color: #f6ebd9;
+      color: #615d5e; }
+
+@media (min-width: 71.25em) {
+  .nav a {
+    font-size: 1.3em; } }
+footer {
+  padding: 1em;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  font-family: "Courgette", cursive; }
+  footer p {
+    text-align: center;
+    font-size: .6em; }
+
+body {
+  background-image: url(../assets/clay-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1em;
+  background-position: 0% 10%;
+  height: 100vh;
+  width: 100%;
+  color: #f6ebd9; }
+
+.mainContent {
+  max-width: 71.25em;
+  margin: 0 auto;
+  padding-left: 2%;
+  padding-right: 2%; }
+
+.mainForm {
+  border: #615d5e 1px solid;
+  -webkit-box-shadow: 0px 0px 10px #615d5e;
+  -moz-box-shadow: 0px 0px 10px #615d5e;
+  -ms-box-shadow: 0px 0px 10px #615d5e;
+  box-shadow: 0px 0px 10px #615d5e;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  background-image: url(../assets/clay-bg-small.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10px 2%;
+  min-height: 350px; }
+  .mainForm .inputTitle {
+    margin-bottom: 5px;
+    display: block; }
+  .mainForm .userInput {
+    display: block;
+    padding: .25em;
+    width: 100%;
+    margin-bottom: 20px; }
+  .mainForm label {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 100%; }
+  .mainForm legend {
+    font-size: 1.5em;
+    padding-bottom: 20px; }
+  .mainForm .approveButton, .mainForm .deleteButton, .mainForm .submitButton {
+    text-decoration: none;
+    display: inline-block;
+    border: #615d5e 1px solid;
+    font-size: 1em;
+    padding: .4em;
+    margin-top: 1em;
+    margin-bottom: 1.75em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    color: #615d5e;
+    transition: background-color .75s ease, color .75s ease; }
+  .mainForm .approveButton {
+    background-color: #5a3628;
+    border-color: #5a3628; }
+    .mainForm .approveButton:hover {
+      background-color: #7d4b38; }
+  .mainForm .deleteButton {
+    margin-left: 10px;
+    background-color: #83250a;
+    border-color: #83250a; }
+    .mainForm .deleteButton:hover {
+      background-color: #541806; }
+  .mainForm .submitContainer {
+    width: 100%;
+    display: block; }
+  .mainForm .submitButton:hover {
+    background-color: #da9c63;
+    color: #f6ebd9; }
+
+@media (min-width: 47.5em) {
+  .mainForm {
+    width: 60%;
+    margin: 0 auto; }
+    .mainForm label {
+      width: 60%; }
+    .mainForm .submitContainer {
+      width: 60%;
+      margin: 0 auto; } }
+@media (min-width: 71.25em) {
+  .mainContent {
+    padding: 0; }
+
+  .mainForm {
+    width: 50%; } }
