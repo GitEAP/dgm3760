@@ -113,7 +113,8 @@ html {
     margin-left: 25px; } }
 footer {
   padding: .75em;
-  background-color: #f5f5f5; }
+  background-color: #f5f5f5;
+  margin-top: 25px; }
   footer p {
     font-size: .6em;
     color: #4cb69f;
@@ -137,3 +138,72 @@ body {
   min-height: 30em;
   padding-left: 2%;
   padding-right: 2%; }
+  .mainContent h1 {
+    font-size: 1.75em;
+    color: #4cb69f;
+    padding-top: 1em;
+    padding-bottom: 1em; }
+
+.mainForm {
+  background-color: #201d3a;
+  color: #f5f5f5;
+  padding: 1.25em;
+  margin: 0 auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px #201d3a;
+  -moz-box-shadow: 0px 0px 10px #201d3a;
+  -ms-box-shadow: 0px 0px 10px #201d3a;
+  box-shadow: 0px 0px 10px #201d3a; }
+  .mainForm span {
+    font-size: .8em;
+    margin-top: .8em;
+    margin-bottom: .25em;
+    display: inline-block; }
+  .mainForm legend {
+    padding-top: .5em;
+    padding-bottom: .5em; }
+  .mainForm .userInput, .mainForm .expertiseSelect, .mainForm .bioText {
+    display: block;
+    padding: .5em; }
+  .mainForm .userInput, .mainForm .bioText {
+    width: 100%;
+    border: 0;
+    border-bottom: #4cb69f 3px solid;
+    background-color: transparent;
+    color: #4cb69f;
+    font-size: 1em; }
+  .mainForm .userInput {
+    margin-bottom: 1em;
+    margin-top: 1em; }
+  .mainForm .expertiseSelect {
+    margin-top: .4em;
+    color: #201d3a;
+    margin-bottom: .5em; }
+  .mainForm .bioText {
+    height: 100px;
+    margin-bottom: .5em;
+    font-family: "Noto Sans", sans-serif; }
+  .mainForm .submitButton {
+    font-size: 1.4em;
+    padding: .5em;
+    border: #f5f5f5 1px solid;
+    color: #4cb69f;
+    background-color: #f5f5f5;
+    margin-top: .8em;
+    transition: color .3s ease, background-color .3s ease, border-color .3s ease; }
+    .mainForm .submitButton:hover {
+      color: #f5f5f5;
+      background-color: #4cb69f;
+      border-color: #4cb69f; }
+  .mainForm .uploadButton {
+    color: #4cb69f;
+    padding: .3em; }
+
+@media (min-width: 47.5em) {
+  .mainForm {
+    width: 50%; }
+    .mainForm .submitButton {
+      font-size: 1em; } }

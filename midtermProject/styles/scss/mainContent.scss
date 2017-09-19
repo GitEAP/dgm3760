@@ -2,5 +2,86 @@
 	min-height: 30em;
 	padding-left: 2%;
 	padding-right: 2%;
+	
+	h1 {
+		font-size: 1.75em;
+		color: $primaryColor;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
 }
-
+.mainForm {
+	background-color: $thirdColor;
+	color: $secondaryColor;
+	padding: 1.25em;
+	margin: 0 auto;
+	@include border-radius(10px);
+	@include box-shadow(0px, 0px, 10px, $thirdColor);
+	span{
+		font-size: .8em;
+		margin-top: .8em;
+		margin-bottom: .25em;
+		display: inline-block;
+	}
+	legend {
+		padding-top: .5em;
+		padding-bottom: .5em;
+	}
+	%inputSelectStyles {//all inputs
+		display: block;
+		padding: .5em;
+	}
+	%mainInputStyles {//all inputs except select
+		width: 100%;
+		border: 0;
+		border-bottom: $primaryColor 3px solid;
+		background-color: transparent;//$secondaryColor;
+		color: $primaryColor;
+		font-size: 1em;
+	}
+	.userInput {
+		@extend %inputSelectStyles;
+		@extend %mainInputStyles;
+		margin-bottom: 1em;
+		margin-top: 1em;
+	}
+	.expertiseSelect {
+		@extend %inputSelectStyles;
+		margin-top: .4em;
+		color: $thirdColor;
+		margin-bottom: .5em;
+	}
+	.bioText{		
+		@extend %inputSelectStyles;
+		@extend %mainInputStyles;
+		height: 100px;
+		margin-bottom: .5em;
+		font-family: $bodyFont;
+	}
+	.submitButton {
+		font-size: 1.4em;
+		padding: .5em;
+		border: $secondaryColor 1px solid;
+		color: $primaryColor;
+		background-color: $secondaryColor;
+		margin-top: .8em;
+		transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+		&:hover {
+			color: $secondaryColor;
+			background-color: $primaryColor;
+			border-color: $primaryColor;
+		}
+	}
+	.uploadButton {
+		color: $primaryColor;
+		padding: .3em;
+	}
+}
+@include breakpoint(tablet) {
+	.mainForm {
+		width: 50%;
+		.submitButton {
+			font-size: 1em;
+		}
+	}
+}
