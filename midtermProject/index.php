@@ -5,7 +5,7 @@
 	<ul>
 		<li><a href="javascript:void(0)" class="fa fa-close closeBtn"></a></li>
 		<li class="active"><a href="index.php">Employees</a></li>
-		<li class="active"><a href="admin.php">Admin Log-In</a></li>
+		<li><a href="admin.php">Admin</a></li>
 	</ul>
 </nav>
 
