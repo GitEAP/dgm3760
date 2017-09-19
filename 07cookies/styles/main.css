@@ -114,6 +114,7 @@ footer {
     font-size: .6em; }
 
 body {
+  background-color: #16120f;
   background-image: url(../assets/clay-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -151,7 +152,19 @@ body {
     display: block;
     padding: .25em;
     width: 100%;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    background-color: #f6ebd9;
+    border: none;
+    font-size: .8em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+    .mainForm .userInput:focus {
+      -webkit-box-shadow: 0px 0px 15px #da9c63;
+      -moz-box-shadow: 0px 0px 15px #da9c63;
+      -ms-box-shadow: 0px 0px 15px #da9c63;
+      box-shadow: 0px 0px 15px #da9c63; }
   .mainForm label {
     margin-left: auto;
     margin-right: auto;
