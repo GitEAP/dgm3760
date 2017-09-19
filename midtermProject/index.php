@@ -22,8 +22,5 @@
 	
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quia, aliquam unde laudantium ex animi alias et natus, neque aperiam perspiciatis ullam. Molestias consequatur culpa pariatur quos temporibus optio dolore?</p>
 	
-	
-	
-	
 </main>
 <?php include_once('footer.php'); ?>
