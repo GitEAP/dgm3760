@@ -1,0 +1,59 @@
+.mainNav {
+	height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $thirdColor;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+	a {
+		padding: 8px 15px 8px 25px;
+		text-decoration: none;
+		font-size: 2em;
+		color: #a8a8a8;
+		display: block;
+		transition: 0.3s;
+		&:hover {
+			color: $secondaryColor;
+		}
+	}
+	.closeBtn {
+		position: absolute;
+		top: 0;
+		right: 10px;
+		margin-left: 50px;
+	}
+}
+
+.headerWrapper {
+	background-color: $secondaryColor;
+	display: block;
+	padding: 1em 2% 1em 2%;
+	
+	.openBtn {
+		font-size: 1.75em;
+		color: $thirdColor;
+		transition: color .3s ease;
+		&:hover {
+			color: $primaryColor;
+		}
+	}
+	h1 {
+		display: inline-block;
+		font-size: 1.15em;
+		color: $primaryColor;
+		margin-left: 5px;
+	}
+}
+@include breakpoint(tablet) {
+	
+.headerWrapper {
+	h1 {
+		font-size: 1.5em;
+		margin-left: 25px;
+	}
+}
+}
