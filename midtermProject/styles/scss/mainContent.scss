@@ -62,7 +62,7 @@
 		background-color: $thirdColor;
 		@include box-shadow(0px, 0px, 10px, $thirdColor);
 		width: 70%;
-		margin: 0 auto;
+		margin: 50px auto;
 		color: $secondaryColor;
 		@include border-radius(5px);
 		.detailImg {
@@ -102,6 +102,22 @@
 		&:hover {
 			color: $thirdColor;
 			border-color: $thirdColor;
+		}
+	}//end of linkButton
+	.deleteButton {
+		text-decoration: none;
+		font-size: 1.25em;
+		padding: .25em;
+		display: inline-block;
+		color: $secondaryColor;
+		background-color: $warningColor;
+		border: 1px solid $warningColor;
+		@include border-radius(5px);
+		margin: .25em;
+		transition: color .3s ease, border-color .3s ease;
+		&:hover {
+			background-color: $secondaryColor;
+			color: $warningColor;
 		}
 	}
 }//end of main content
