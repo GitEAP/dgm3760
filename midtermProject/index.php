@@ -1,3 +1,9 @@
+<?php require_once('connectvars.php'); 
+
+$dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Connection failed');
+$query = "SELECT * FROM employee_directory";
+$result = mysqli_query($dbconnection, $query);
+?>
 <?php include_once('htmlHead.php'); ?>
 <body>
 
@@ -18,9 +24,28 @@
 
 	<div class="banner"></div>
 
-<main class="mainContent">
+<main class="mainContent clearfix">
 	
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quia, aliquam unde laudantium ex animi alias et natus, neque aperiam perspiciatis ullam. Molestias consequatur culpa pariatur quos temporibus optio dolore?</p>
+	<h1>Research Team</h1>
+	<div class="row clearfix">
+<?php 
+	//display all hired employees
+	while ($row = mysqli_fetch_array($result)) {	
+	
+		echo '<div class="column">';
+		echo '<figure>';
+			echo '<img src="images/' . $row['photo'] . '" alt="Picture of employee">';
+		
+				echo '<figcaption class="masterCaption">';
+				echo '<h3>' . $row['first'] . ' ' .$row['last'] . '</h3>';
+				echo '<h4>' . $row['area'] . '</h4>';
+				echo '<a href="detail.php?' . $row['id'] . '" class="detailButton">View Details</a>';
+				echo '</figcaption>';
+		echo '</figure>';	
+		echo '</div>';
+}//end of while loop
+?>
+	</div><!--end of row-->
 	
 </main>
 <?php include_once('footer.php'); ?>

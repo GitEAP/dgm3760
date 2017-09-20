@@ -9,7 +9,56 @@
 		padding-top: 1em;
 		padding-bottom: 1em;
 	}
-}
+	.row {
+		margin-top: 25px;
+	}
+	.column {
+		float: left;
+		//width: 300px;
+		width: 50%;
+		display: block;
+		padding: .8em;
+		
+		figure {
+			width: 100%;
+			@include box-shadow(0px, 0px, 5px, $thirdColor);
+		}
+		img {
+			width: 100%;
+			display: block;
+		}
+		.masterCaption {
+			text-align: center;
+			background-color: $thirdColor;
+			padding: .25em .25em .75em .25em;
+			h3 {
+				color: $primaryColor;
+				font-size: 1.5em;
+				padding-top: .25em;
+				padding-bottom: .25em;
+			}
+			h4 {
+				color: $secondaryColor;
+				font-size: .75em;
+				opacity: .5;
+				padding-bottom: .7em;
+			}
+		}//end of masterCaption
+	}//end of master list
+	.detailButton {
+		font-size: .8em;
+		text-decoration: none;
+		padding: .4em;
+		border: 1px solid $primaryColor;
+		color: $primaryColor;
+		display: inline-block;
+		transition: color .3s ease, border-color .3s ease;
+		&:hover {
+			color: $secondaryColor;
+			border-color: $secondaryColor;
+		}
+	}
+}//end of main content
 .mainForm {
 	background-color: $thirdColor;
 	color: $secondaryColor;
@@ -86,6 +135,11 @@
 		width: 50%;
 		.submitButton {
 			font-size: 1em;
+		}
+	}
+	.mainContent {
+		.column {
+			width: 25%;
 		}
 	}
 }

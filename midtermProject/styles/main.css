@@ -143,6 +143,47 @@ body {
     color: #4cb69f;
     padding-top: 1em;
     padding-bottom: 1em; }
+  .mainContent .row {
+    margin-top: 25px; }
+  .mainContent .column {
+    float: left;
+    width: 50%;
+    display: block;
+    padding: .8em; }
+    .mainContent .column figure {
+      width: 100%;
+      -webkit-box-shadow: 0px 0px 5px #201d3a;
+      -moz-box-shadow: 0px 0px 5px #201d3a;
+      -ms-box-shadow: 0px 0px 5px #201d3a;
+      box-shadow: 0px 0px 5px #201d3a; }
+    .mainContent .column img {
+      width: 100%;
+      display: block; }
+    .mainContent .column .masterCaption {
+      text-align: center;
+      background-color: #201d3a;
+      padding: .25em .25em .75em .25em; }
+      .mainContent .column .masterCaption h3 {
+        color: #4cb69f;
+        font-size: 1.5em;
+        padding-top: .25em;
+        padding-bottom: .25em; }
+      .mainContent .column .masterCaption h4 {
+        color: #f5f5f5;
+        font-size: .75em;
+        opacity: .5;
+        padding-bottom: .7em; }
+  .mainContent .detailButton {
+    font-size: .8em;
+    text-decoration: none;
+    padding: .4em;
+    border: 1px solid #4cb69f;
+    color: #4cb69f;
+    display: inline-block;
+    transition: color .3s ease, border-color .3s ease; }
+    .mainContent .detailButton:hover {
+      color: #f5f5f5;
+      border-color: #f5f5f5; }
 
 .mainForm {
   background-color: #201d3a;
@@ -209,4 +250,7 @@ body {
   .mainForm {
     width: 50%; }
     .mainForm .submitButton {
-      font-size: 1em; } }
+      font-size: 1em; }
+
+  .mainContent .column {
+    width: 25%; } }
