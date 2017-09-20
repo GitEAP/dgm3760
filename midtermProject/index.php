@@ -39,7 +39,7 @@ $result = mysqli_query($dbconnection, $query);
 				echo '<figcaption class="masterCaption">';
 				echo '<h3>' . $row['first'] . ' ' .$row['last'] . '</h3>';
 				echo '<h4>' . $row['area'] . '</h4>';
-				echo '<a href="detail.php?' . $row['id'] . '" class="detailButton">View Details</a>';
+				echo '<a href="details.php?id=' . $row['id'] . '" class="detailButton">View Details</a>';
 				echo '</figcaption>';
 		echo '</figure>';	
 		echo '</div>';

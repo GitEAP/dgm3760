@@ -57,6 +57,52 @@
 			color: $secondaryColor;
 			border-color: $secondaryColor;
 		}
+	}//end of detail button
+	.detailContainer {
+		background-color: $thirdColor;
+		@include box-shadow(0px, 0px, 10px, $thirdColor);
+		width: 70%;
+		margin: 0 auto;
+		color: $secondaryColor;
+		@include border-radius(5px);
+		.detailImg {
+			width: 100%;
+			padding-bottom: 15px;
+			img { width: 100%; @include border-radius(5px);  }
+		}
+		.detailContent{
+			float: left;
+			width: 100%;
+			padding: 0px 1em 20px 1em;
+
+			h3 {
+				color: $primaryColor;
+				font-size: 2.5em;
+				padding-bottom: .25em;
+			}
+			p {
+				color: $secondaryColor;
+				font-size: 1em;
+				padding-top: .25em;
+				padding-bottom: .25em;
+			}
+		}//end of detailContent
+	}//end of detailContainer
+	.linkButton {
+		text-decoration: none;
+		font-size: 1.25em;
+		padding: .25em;
+		display: inline-block;
+		background-color: $primaryColor;
+		color: $secondaryColor;
+		border: 1px solid $primaryColor;
+		@include border-radius(5px);
+		margin: .25em;
+		transition: color .3s ease, border-color .3s ease;
+		&:hover {
+			color: $thirdColor;
+			border-color: $thirdColor;
+		}
 	}
 }//end of main content
 .mainForm {
@@ -141,5 +187,18 @@
 		.column {
 			width: 25%;
 		}
+		.detailContainer {
+			width: 100%;
+			.detailImg {
+				width: 25%;
+				float: left;
+				margin: 0;
+				padding: 0;
+			}
+			.detailContent{
+				width: 75%;
+				padding: 10px 1em 10px 1em;
+			}
+	}//end of detail container
 	}
 }
