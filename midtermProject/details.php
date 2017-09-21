@@ -5,6 +5,8 @@ $dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('C
 $query = "SELECT * FROM employee_directory WHERE id=$id";
 $result = mysqli_query($dbconnection, $query);
 $found = mysqli_fetch_array($result);
+
+
 ?>
 <?php include_once('htmlHead.php'); ?>
 <body>
@@ -56,12 +58,21 @@ $found = mysqli_fetch_array($result);
 
 		echo '<hr>';	
 	
-		echo '<a href="#" class="linkButton">Email Me</a>';
+		echo '<a href="sendEmail.php?id=' . $found['id'] . '" class="linkButton">Email Me</a>';
 		echo '<a href="index.php" class="linkButton">Back</a>';
 		echo '</div>';
 
 		echo '</div>';
 ?>
+
+<?php
+//Build Email
+$to = '$found[email]';
+$subject = 'Message to Employee';
+$message = "something something";
+//Send Email
+mail($to, $subject, $message, 'FROM:' . $email);
+	?>
 	
 </main>
 <?php include_once('footer.php'); ?>

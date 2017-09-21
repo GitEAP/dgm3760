@@ -138,6 +138,10 @@ body {
   min-height: 30em;
   padding-left: 2%;
   padding-right: 2%; }
+  .mainContent .cancelFloat {
+    float: right;
+    display: inline-block;
+    padding-top: 10px; }
   .mainContent h1 {
     font-size: 1.75em;
     color: #4cb69f;

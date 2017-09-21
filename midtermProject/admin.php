@@ -1,4 +1,6 @@
-<?php require_once('connectvars.php'); 
+<?php 
+require_once('authorize.php'); 
+require_once('connectvars.php'); 
 
 $dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Connection failed');
 $query = "SELECT * FROM employee_directory";
@@ -55,8 +57,8 @@ $result = mysqli_query($dbconnection, $query);
 
 		echo '<hr>';	
 	
-		echo '<a href="#" class="linkButton"><i class="fa fa-edit"></i>Update</a>';
-		echo '<a href="#" class="deleteButton"><i class="fa fa-trash-o"></i> Delete</a>';
+		echo '<a href="update.php?id=' . $row['id'] . '" class="linkButton"><i class="fa fa-edit"></i>Update</a>';
+		echo '<a href="delete.php?id=' . $row['id'] . '" class="deleteButton"><i class="fa fa-trash-o"></i> Delete</a>';
 		echo '</div>';//end of content
 
 		echo '</div>';//end of container
