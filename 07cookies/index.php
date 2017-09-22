@@ -2,31 +2,36 @@
 
 <body>
 
-<div class="headerWrapper clearfix">
-	<h1>Cookys &amp; Cafe</h1>
-</div>
-
-<div class="nav clearfix">
-	<ul>
-		<li class="active"><a href="index.php">View</a></li>
-		<li><a href="add.php">Add</a></li>
-		<li><a href="admin.php">Admin</a></li>
-	</ul>
-</div>
+<?php include_once('nav.php'); //includes header and nav ?>
 
 <main class="mainContent clearfix">
-	
-		<form action="" method="POST" enctype="multipart/form-data" class="mainForm">
-			<fieldset>
-				<legend>Log In</legend>
-				<label><span class="inputTitle">Username:</span><input class="userInput" name="userName" value="" type="text" placeholder="username"></label>
-				<label><span class="inputTitle">Password:</span><input class="userInput" name="passWord" value="" type="text" placeholder="password"></label>
-			</fieldset>
-			
-			<div class="submitContainer"><input name="submit" type="submit" value="Log In" class="submitButton"></div>
-			
-		</form>	
-		
-</main>
 
-<?php include_once('footer.php'); ?>
+
+<h1>All custom menu items</h1>
+<p>Do you want to <a href="addFav.php">add a favorite item?</a></p>
+<div class="itemsList">
+	
+<?php 
+require_once('connectvars.php');
+	
+$dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$query = "SELECT * FROM cookie_users ORDER BY date";
+$result = mysqli_query($dbconnection, $query);
+	
+while($row = mysqli_fetch_array($result)) {
+	
+	echo '<p><a href="details.php?id=' . $row['id'] . '">' . $row['favorite'] . '</a> ' . $row['date'] . '</p>';
+
+}
+	
+	
+?>
+</div>	
+	
+	
+	
+	
+	
+</main>
+</body>
+</html>
