@@ -1,0 +1,52 @@
+$bodyFont: 'Noto Sans', sans-serif;
+
+$primaryColor: #4cb69f;
+$secondaryColor: #f5f5f5;
+$thirdColor: #201d3a;
+
+$warningColor: #b73e3e;
+
+
+//Mixin's
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin box-shadow($hShadow, $vShadow, $blur, $color) {
+	-webkit-box-shadow: $hShadow $vShadow $blur $color;
+	-moz-box-shadow: $hShadow $vShadow $blur $color;
+	-ms-box-shadow: $hShadow $vShadow $blur $color;
+	box-shadow: $hShadow $vShadow $blur $color;
+}
+@mixin text-shadow($hShadow, $vShadow, $blur, $color) {
+	-webkit-text-shadow: $hShadow $vShadow $blur $color;
+	-moz-text-shadow: $hShadow $vShadow $blur $color;
+	-ms-text-shadow: $hShadow $vShadow $blur $color;
+	text-shadow: $hShadow $vShadow $blur $color;
+}
+
+//breakpoints (progressive enhancement)
+/* 760px (size we want) / 16 (16px = 1em) = 47.5em  For Tablet*/
+$tabletWidth: 47.5em;
+/* 1140px (size we want) / 16 (16px = 1em) = 71.25em For Desktop*/
+$desktopWidth: 71.25em;
+
+// @include breakpoint(desktop){}
+@mixin breakpoint($point) {
+	@if $point == desktop {
+		@media (min-width: $desktopWidth) { @content ; }
+	}
+	@else if $point == tablet {
+		@media (min-width: $tabletWidth) { @content ; }
+	}
+}
+
+/*----- Clearfix -----*/
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+

@@ -1,0 +1,14 @@
+.container {
+	transition: margin-left .5s;
+}
+body {
+	font-family: $bodyFont;
+}
+.banner {
+	max-height: 320px;
+	height: 320px;
+	width: 100%;
+	background-image: url(../assets/dna.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}

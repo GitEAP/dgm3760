@@ -1,0 +1,224 @@
+.mainContent {
+	min-height: 30em;
+	padding-left: 2%;
+	padding-right: 2%;
+	.cancelFloat {
+		float: right;
+		display: inline-block;
+		padding-top: 10px;
+	}
+	h1 {
+		font-size: 1.75em;
+		color: $primaryColor;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+	.row {
+		margin-top: 25px;
+	}
+	.column {
+		float: left;
+		//width: 300px;
+		width: 50%;
+		display: block;
+		padding: .8em;
+		
+		figure {
+			width: 100%;
+			@include box-shadow(0px, 0px, 5px, $thirdColor);
+		}
+		img {
+			width: 100%;
+			display: block;
+		}
+		.masterCaption {
+			text-align: center;
+			background-color: $thirdColor;
+			padding: .25em .25em .75em .25em;
+			h3 {
+				color: $primaryColor;
+				font-size: 1.5em;
+				padding-top: .25em;
+				padding-bottom: .25em;
+			}
+			h4 {
+				color: $secondaryColor;
+				font-size: .75em;
+				opacity: .5;
+				padding-bottom: .7em;
+			}
+		}//end of masterCaption
+	}//end of master list
+	.detailButton {
+		font-size: .8em;
+		text-decoration: none;
+		padding: .4em;
+		border: 1px solid $primaryColor;
+		color: $primaryColor;
+		display: inline-block;
+		transition: color .3s ease, border-color .3s ease;
+		&:hover {
+			color: $secondaryColor;
+			border-color: $secondaryColor;
+		}
+	}//end of detail button
+	.detailContainer {
+		background-color: $thirdColor;
+		@include box-shadow(0px, 0px, 10px, $thirdColor);
+		width: 70%;
+		margin: 50px auto;
+		color: $secondaryColor;
+		@include border-radius(5px);
+		.detailImg {
+			width: 100%;
+			padding-bottom: 15px;
+			img { width: 100%; @include border-radius(5px);  }
+		}
+		.detailContent{
+			float: left;
+			width: 100%;
+			padding: 0px 1em 20px 1em;
+
+			h3 {
+				color: $primaryColor;
+				font-size: 2.5em;
+				padding-bottom: .25em;
+			}
+			p {
+				color: $secondaryColor;
+				font-size: 1em;
+				padding-top: .25em;
+				padding-bottom: .25em;
+			}
+		}//end of detailContent
+	}//end of detailContainer
+	.linkButton {
+		text-decoration: none;
+		font-size: 1.25em;
+		padding: .25em;
+		display: inline-block;
+		background-color: $primaryColor;
+		color: $secondaryColor;
+		border: 1px solid $primaryColor;
+		@include border-radius(5px);
+		margin: .25em;
+		transition: color .3s ease, border-color .3s ease;
+		&:hover {
+			color: $thirdColor;
+			border-color: $thirdColor;
+		}
+	}//end of linkButton
+	.deleteButton {
+		text-decoration: none;
+		font-size: 1.25em;
+		padding: .25em;
+		display: inline-block;
+		color: $secondaryColor;
+		background-color: $warningColor;
+		border: 1px solid $warningColor;
+		@include border-radius(5px);
+		margin: .25em;
+		transition: color .3s ease, border-color .3s ease;
+		&:hover {
+			background-color: $secondaryColor;
+			color: $warningColor;
+		}
+	}
+}//end of main content
+.mainForm {
+	background-color: $thirdColor;
+	color: $secondaryColor;
+	padding: 1.25em;
+	margin: 0 auto;
+	@include border-radius(10px);
+	@include box-shadow(0px, 0px, 10px, $thirdColor);
+	span{
+		font-size: .8em;
+		margin-top: .8em;
+		margin-bottom: .25em;
+		display: inline-block;
+	}
+	.charLimit {
+		opacity: .3;
+		float: right;
+	}
+	legend {
+		padding-top: .5em;
+		padding-bottom: .5em;
+	}
+	%inputSelectStyles {//all inputs
+		display: block;
+		padding: .5em;
+	}
+	%mainInputStyles {//all inputs except select
+		width: 100%;
+		border: 0;
+		border-bottom: $primaryColor 3px solid;
+		background-color: transparent;//$secondaryColor;
+		color: $primaryColor;
+		font-size: 1em;
+	}
+	.userInput {
+		@extend %inputSelectStyles;
+		@extend %mainInputStyles;
+		margin-bottom: 1em;
+		margin-top: 1em;
+	}
+	.expertiseSelect {
+		@extend %inputSelectStyles;
+		margin-top: .4em;
+		color: $thirdColor;
+		margin-bottom: .5em;
+	}
+	.bioText{		
+		@extend %inputSelectStyles;
+		@extend %mainInputStyles;
+		height: 100px;
+		margin-bottom: .5em;
+		font-family: $bodyFont;
+	}
+	.submitButton {
+		font-size: 1.4em;
+		padding: .5em;
+		border: $secondaryColor 1px solid;
+		color: $primaryColor;
+		background-color: $secondaryColor;
+		margin-top: .8em;
+		transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+		&:hover {
+			color: $secondaryColor;
+			background-color: $primaryColor;
+			border-color: $primaryColor;
+		}
+	}
+	.uploadButton {
+		color: $primaryColor;
+		padding: .3em;
+	}
+}
+@include breakpoint(tablet) {
+	.mainForm {
+		width: 50%;
+		.submitButton {
+			font-size: 1em;
+		}
+	}
+	.mainContent {
+		.column {
+			width: 25%;
+		}
+		.detailContainer {
+			width: 100%;
+			.detailImg {
+				width: 25%;
+				float: left;
+				margin: 0;
+				padding: 0;
+			}
+			.detailContent{
+				width: 75%;
+				padding: 10px 1em 10px 1em;
+			}
+	}//end of detail container
+	}
+}
