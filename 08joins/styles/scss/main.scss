@@ -1,7 +1,10 @@
+//Reset and Global Variables
 @import 'reset';
 @import 'variables';
-
+//Global Styles
+@import 'default';
+//Site Styles
 @import 'header';
 @import 'footer';
-@import 'default';
+//Page Styles
 @import 'mainContent';
