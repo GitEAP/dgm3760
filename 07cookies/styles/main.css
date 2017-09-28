@@ -118,6 +118,7 @@ body {
   background-image: url(../assets/clay-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1em;
   background-position: 0% 10%;
@@ -138,7 +139,8 @@ p {
   max-width: 71.25em;
   margin: 0 auto;
   padding-left: 2%;
-  padding-right: 2%; }
+  padding-right: 2%;
+  min-height: 700px; }
   .mainContent h1 {
     font-size: 1.75em; }
   .mainContent .detailContainer {
