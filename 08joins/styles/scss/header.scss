@@ -1,59 +1,58 @@
 .mainNav {
-	height: 100%;
-    width: 0px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: $thirdColor;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+	position: fixed;
+	top: 40px;
 	a {
-		padding: 8px 15px 8px 25px;
+		font-family: $headFont;
 		text-decoration: none;
-		font-size: 2em;
-		color: #a8a8a8;
-		display: block;
-		transition: 0.3s;
+		font-size: 1.25em;
+		color: $white;
+		position: absolute;
+		left: -100px;
+		transition: 0.3s; 
+		padding: 15px 15px 15px 25px; 
+		width: 150px;
+		border-radius: 0 5px 5px 0;
+
+		&#home {
+			top: 20px;
+			background-color: $darkGreenColor;
+		}
+		&#add {
+			top: 80px;
+			background-color: $orangeColor;
+		}
+		&#search {
+			top: 140px;
+			background-color: $purpleColor;
+		}
 		&:hover {
+			left: 0px;
 			color: $secondaryColor;
 		}
-	}
-	.closeBtn {
+	}//end of a
+	.navIcons {
 		position: absolute;
-		top: 0;
-		right: 10px;
-		margin-left: 50px;
+		right: 20px;
+		top: 15px;
 	}
 }
-
 .headerWrapper {
-	background-color: $secondaryColor;
+	background-color: $purpleColor;
 	display: block;
-	padding: 1em 2% 1em 2%;
-	
-	.openBtn {
-		font-size: 1.75em;
-		color: $thirdColor;
-		transition: color .3s ease;
-		&:hover {
-			color: $primaryColor;
-		}
-	}
+	padding: 1em 5% 1em 5%;
+	font-family: $headFont;
+	color: $white;
+	text-align: center;
+
 	h1 {
-		display: inline-block;
+		display: block;
 		font-size: 1.15em;
-		color: $primaryColor;
-		margin-left: 5px;
 	}
 }
 @include breakpoint(tablet) {
-	
 .headerWrapper {
 	h1 {
 		font-size: 1.5em;
-		margin-left: 25px;
 	}
 }
 }

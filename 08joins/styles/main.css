@@ -65,9 +65,6 @@ html {
   display: table;
   clear: both; }
 
-.container {
-  transition: margin-left .5s; }
-
 body {
   font-family: "Noto Sans", sans-serif; }
 
@@ -80,71 +77,66 @@ body {
   background-position: center; }
 
 .mainNav {
-  height: 100%;
-  width: 0px;
   position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #201d3a;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px; }
+  top: 40px; }
   .mainNav a {
-    padding: 8px 15px 8px 25px;
+    font-family: "Noto Serif", serif;
     text-decoration: none;
-    font-size: 2em;
-    color: #a8a8a8;
-    display: block;
-    transition: 0.3s; }
-    .mainNav a:hover {
-      color: #f5f5f5; }
-  .mainNav .closeBtn {
+    font-size: 1.25em;
+    color: #e5dcf2;
     position: absolute;
-    top: 0;
-    right: 10px;
-    margin-left: 50px; }
+    left: -100px;
+    transition: 0.3s;
+    padding: 15px 15px 15px 25px;
+    width: 150px;
+    border-radius: 0 5px 5px 0; }
+    .mainNav a#home {
+      top: 20px;
+      background-color: #7a9a95; }
+    .mainNav a#add {
+      top: 80px;
+      background-color: #ef6d3b; }
+    .mainNav a#search {
+      top: 140px;
+      background-color: #3F2860; }
+    .mainNav a:hover {
+      left: 0px;
+      color: #f5f5f5; }
+  .mainNav .navIcons {
+    position: absolute;
+    right: 20px;
+    top: 15px; }
 
 .headerWrapper {
-  background-color: #f5f5f5;
+  background-color: #3F2860;
   display: block;
-  padding: 1em 2% 1em 2%; }
-  .headerWrapper .openBtn {
-    font-size: 1.75em;
-    color: #201d3a;
-    transition: color .3s ease; }
-    .headerWrapper .openBtn:hover {
-      color: #4cb69f; }
+  padding: 1em 5% 1em 5%;
+  font-family: "Noto Serif", serif;
+  color: #e5dcf2;
+  text-align: center; }
   .headerWrapper h1 {
-    display: inline-block;
-    font-size: 1.15em;
-    color: #4cb69f;
-    margin-left: 5px; }
+    display: block;
+    font-size: 1.15em; }
 
 @media (min-width: 47.5em) {
   .headerWrapper h1 {
-    font-size: 1.5em;
-    margin-left: 25px; } }
+    font-size: 1.5em; } }
 footer {
   padding: .75em;
-  background-color: #f5f5f5;
+  background-color: #3F2860;
   margin-top: 25px; }
   footer p {
     font-size: .6em;
-    color: #4cb69f;
+    color: #e5dcf2;
     text-align: right; }
 
 .mainContent {
   min-height: 30em;
-  padding-left: 2%;
-  padding-right: 2%; }
-  .mainContent .cancelFloat {
-    float: right;
-    display: inline-block;
-    padding-top: 10px; }
+  padding-left: 5%;
+  padding-right: 5%; }
   .mainContent h1 {
     font-size: 1.75em;
-    color: #4cb69f;
+    color: #ef6d3b;
     padding-top: 1em;
     padding-bottom: 1em; }
   .mainContent .row {
@@ -189,14 +181,13 @@ footer {
       color: #f5f5f5;
       border-color: #f5f5f5; }
   .mainContent .detailContainer {
-    background-color: #201d3a;
-    -webkit-box-shadow: 0px 0px 10px #201d3a;
-    -moz-box-shadow: 0px 0px 10px #201d3a;
-    -ms-box-shadow: 0px 0px 10px #201d3a;
-    box-shadow: 0px 0px 10px #201d3a;
+    background-color: #3F2860;
+    -webkit-box-shadow: 0px 0px 10px #3F2860;
+    -moz-box-shadow: 0px 0px 10px #3F2860;
+    -ms-box-shadow: 0px 0px 10px #3F2860;
+    box-shadow: 0px 0px 10px #3F2860;
     width: 70%;
     margin: 50px auto;
-    color: #f5f5f5;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -211,26 +202,30 @@ footer {
         -ms-border-radius: 5px;
         border-radius: 5px; }
     .mainContent .detailContainer .detailContent {
+      background-color: #3F2860;
       float: left;
       width: 100%;
       padding: 0px 1em 20px 1em; }
       .mainContent .detailContainer .detailContent h3 {
-        color: #4cb69f;
+        color: #e5dcf2;
         font-size: 2.5em;
         padding-bottom: .25em; }
       .mainContent .detailContainer .detailContent p {
-        color: #f5f5f5;
+        color: #e5dcf2;
         font-size: 1em;
         padding-top: .25em;
         padding-bottom: .25em; }
+    .mainContent .detailContainer .movieList {
+      margin-left: 15px;
+      padding: .6em; }
   .mainContent .linkButton {
     text-decoration: none;
     font-size: 1.25em;
     padding: .25em;
     display: inline-block;
-    background-color: #4cb69f;
-    color: #f5f5f5;
-    border: 1px solid #4cb69f;
+    background-color: #3F2860;
+    color: #e5dcf2;
+    border: 1px solid #3F2860;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -238,16 +233,16 @@ footer {
     margin: .25em;
     transition: color .3s ease, border-color .3s ease; }
     .mainContent .linkButton:hover {
-      color: #201d3a;
-      border-color: #201d3a; }
+      color: #ef6d3b;
+      border-color: #ef6d3b; }
   .mainContent .deleteButton {
     text-decoration: none;
     font-size: 1.25em;
     padding: .25em;
     display: inline-block;
     color: #f5f5f5;
-    background-color: #b73e3e;
-    border: 1px solid #b73e3e;
+    background-color: #f22929;
+    border: 1px solid #f22929;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -256,21 +251,27 @@ footer {
     transition: color .3s ease, border-color .3s ease; }
     .mainContent .deleteButton:hover {
       background-color: #f5f5f5;
-      color: #b73e3e; }
+      color: #f22929; }
 
 .mainForm {
-  background-color: #201d3a;
-  color: #f5f5f5;
+  background-color: #3F2860;
+  color: #e5dcf2;
   padding: 1.25em;
   margin: 0 auto;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 10px #201d3a;
-  -moz-box-shadow: 0px 0px 10px #201d3a;
-  -ms-box-shadow: 0px 0px 10px #201d3a;
-  box-shadow: 0px 0px 10px #201d3a; }
+  -webkit-box-shadow: 0px 0px 10px #3F2860;
+  -moz-box-shadow: 0px 0px 10px #3F2860;
+  -ms-box-shadow: 0px 0px 10px #3F2860;
+  box-shadow: 0px 0px 10px #3F2860; }
+  .mainForm fieldset {
+    margin-bottom: 25px; }
+  .mainForm select {
+    display: block;
+    margin-top: 5px;
+    padding: .45em; }
   .mainForm span {
     font-size: .8em;
     margin-top: .8em;
@@ -282,23 +283,18 @@ footer {
   .mainForm legend {
     padding-top: .5em;
     padding-bottom: .5em; }
-  .mainForm .userInput, .mainForm .expertiseSelect, .mainForm .bioText {
-    display: block;
-    padding: .5em; }
   .mainForm .userInput, .mainForm .bioText {
+    display: block;
+    padding: .5em;
     width: 100%;
     border: 0;
-    border-bottom: #4cb69f 3px solid;
+    border-bottom: #90c5a9 3px solid;
     background-color: transparent;
-    color: #4cb69f;
+    color: #e5dcf2;
     font-size: 1em; }
   .mainForm .userInput {
     margin-bottom: 1em;
     margin-top: 1em; }
-  .mainForm .expertiseSelect {
-    margin-top: .4em;
-    color: #201d3a;
-    margin-bottom: .5em; }
   .mainForm .bioText {
     height: 100px;
     margin-bottom: .5em;
@@ -306,18 +302,18 @@ footer {
   .mainForm .submitButton {
     font-size: 1.4em;
     padding: .5em;
-    border: #f5f5f5 1px solid;
-    color: #4cb69f;
-    background-color: #f5f5f5;
+    border: #e5dcf2 1px solid;
+    color: #3F2860;
+    background-color: #e5dcf2;
     margin-top: .8em;
-    transition: color .3s ease, background-color .3s ease, border-color .3s ease; }
+    transition: background-color .3s ease; }
     .mainForm .submitButton:hover {
-      color: #f5f5f5;
-      background-color: #4cb69f;
-      border-color: #4cb69f; }
+      background-color: #90c5a9; }
   .mainForm .uploadButton {
     color: #4cb69f;
     padding: .3em; }
+  .mainForm .checks {
+    display: block; }
 
 @media (min-width: 47.5em) {
   .mainForm {
