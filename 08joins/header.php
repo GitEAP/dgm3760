@@ -5,7 +5,7 @@
 </nav>
 
 <header class="headerWrapper">
-	<h1>Movie Groups</h1>
+	<h1>Favorite Movies</h1>
 </header>
 
 <div class="banner"></div>

@@ -1,22 +1,36 @@
 <?php
+$search = $_GET['favorite'];
+$title = 'All Users';
+$queryWhere = '';
+
+
+if (isset($_GET['favorite'])) {
+	$queryWhere = "WHERE favorite=$search";
+	$title = 'Search Results';
+}
+
+
 require_once('connectvars.php');
 $dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Connection failed');
 
-$query = "SELECT * FROM movie_user INNER JOIN movie_fav ON (movie_user.favorite = movie_fav.fav_id) ORDER BY last";
+$query = "SELECT * FROM movie_user INNER JOIN movie_fav ON (movie_user.favorite = movie_fav.fav_id) $queryWhere ORDER BY last";
 $result = mysqli_query($dbconnection, $query) or die('inner join failed');
 
 ?>
-
-
 <?php include_once('htmlHead.php'); ?>
 <body>
 <?php include_once('header.php'); ?>
 
 <main class="mainContent clearfix">
 	
-	<h1>All Users</h1>
-	
 	<?php
+	
+		if (mysqli_num_rows($result) == 0) {
+			$title = 'Sorry no matchces found';
+		}
+		
+		echo '<h1>' . $title . '</h1>';
+		
 		while($row = mysqli_fetch_array($result)) {
 	
 			echo '<div class="detailContainer clearfix">';
@@ -43,8 +57,6 @@ $result = mysqli_query($dbconnection, $query) or die('inner join failed');
 		}//end of while
 	?>
 
-	
-	
 </main>
 <?php mysqli_close($dbconnection); ?>
 <?php include_once('footer.php'); ?>
