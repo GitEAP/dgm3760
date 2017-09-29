@@ -2,6 +2,7 @@ footer {
 	padding: .75em;
 	background-color: $purpleColor;
 	margin-top: 25px;
+	@include box-shadow(0,-1px,4px,$purpleColor);
 	p {
 		font-size: .6em;
 		color: $white;

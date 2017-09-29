@@ -8,4 +8,5 @@ body {
 	background-image: url(../assets/popcorn.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
+	@include box-shadow(0,1px,8px,$purpleColor);
 }
