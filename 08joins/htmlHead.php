@@ -5,7 +5,7 @@
 <!-- TELLS PHONES NOT TO LIE ABOUT THEIR WIDTH & stops the font from enlarging whena phone is turned sideways-->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<title>Movie Groups</title>
+<title>Favorite Movie</title>
 <link href="styles/main.css" type="text/css" rel="stylesheet">
 <!--Google Fonts-->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif" rel="stylesheet"> 
