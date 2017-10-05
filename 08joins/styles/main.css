@@ -342,6 +342,12 @@ footer {
     padding: .3em; }
   .mainForm .checks {
     display: block; }
+  .mainForm .releaseDate {
+    display: inline-block; }
+  .mainForm .releaseDateSelect {
+    display: inline;
+    width: 80px;
+    margin-right: .4em; }
 
 @media (min-width: 47.5em) {
   .mainForm {
