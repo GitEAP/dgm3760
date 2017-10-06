@@ -3,27 +3,23 @@ require_once('connectvars.php');
 
 	if(isset($_POST['submit'])) {
 		//Get variables from the form
-		$title = $_POST['title'];
-		$director = $_POST['director'];
+		$title = ucfirst($_POST['title']);
+		$director = ucwords($_POST['director']);
 		$rating = strtoupper($_POST['rating']);
 		$day = $_POST['day'];
 		$month = $_POST['month'];
 		$year = $_POST['year'];
-		$summary = $_POST['summary'];
-		
 		$movieDay = $day.'_'.$month.'_'.$year;
-
-		
 		//Connect to DB to add variables
 		$dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Connection failed');
+	
+		$summary = mysqli_real_escape_string($dbconnection, ucfirst($_POST['summary']));
 		
-		$query = "INSERT INTO watch_movie (title, director, movie_day, summary, rating) VALUES ('$title','$director','$movieDay','$summary', '$rating')";
-		
-		echo $movieDay;
-		echo '<br>';
-		
-		$result = mysqli_query($dbconnection, $query) or die(' Query failed');
-		
+		$query = "INSERT INTO watch_movie (title, director, movie_day, summary, rating)" .
+			"VALUES ('$title', '$director', '$movieDay', '$summary', '$rating')";	
+
+		$result = mysqli_query($dbconnection, $query) or die('Query failed');
+	
 		mysqli_close($dbconnection);
 		header('Location: index.php');
 		exit;
@@ -63,19 +59,15 @@ require_once('connectvars.php');
 					}
 				?>
 			</select>
-			
-<!--			<input type="text" name="year" placeholder="Year ex. 2017" required pattern="[0-9]{4}"> -->
-			
+						
 				<span class="releaseDate">Year:</span>
 			<select name="year" class="releaseDateSelect">
 				<?php
 					for($i=2017; $i >= 1920; $i--) {
-						echo ($i < 10 ? '<option>0' . $i . '</option>' : '<option>' . $i . '</option>');
+						echo '<option>'.$i.'</option>';
 					}
 				?>
 			</select>
-			
-			
 			
 			<textarea name="summary" class="bioText" placeholder="What is the movie about?"></textarea>	
 					

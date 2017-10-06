@@ -62,7 +62,8 @@
 					$myresults = str_replace($word, $insert, $myresults);
 				}
 				$myresults = str_replace('***', 'span', $myresults);
-				$myresults = substr($myresults, 0, 350);
+				$myresults = ucfirst(substr($myresults, 0, 350));//only shows a short summary//goes back to make the first letter upper case
+				
 				echo '<div class="searchResults">';
 				echo '<h3>' . $row['title'] . '</h3>';
 				echo '<p>' . $myresults . '....<a href="index.php#'.$row['title'].'">Full Details</a></p>';
