@@ -1,0 +1,87 @@
+//Fonts
+$bodyFont: 'Arvo', serif;
+//************************COLORS************************
+$primaryColor: #0079c2;
+//text Colors
+$mainText: #777;
+$lightText: #999;
+$darkText: #464646;
+//body Colors
+$backgroundColor: #eee;
+$containerColor: #fff;
+$contentBGColor: #f5f5f5;
+//Other
+$greenAccent: #39b54a;
+$yellowAccent: #ffde00;
+$pinkAccent: #ee2375;
+//Fig caption BG #58585a
+
+//************************GRADIENTS************************
+@mixin ButtonColorGradient($color, $state: normal) {
+	@if $state == normal {
+		@if $color == blue {
+			background: #0295ed;
+			background: -moz-linear-gradient(top, #0295ed 0%, #0295ed 51%, #007cc7 51%, #007cc7 100%);
+			background: -webkit-linear-gradient(top, #0295ed 0%,#0295ed 51%,#007cc7 51%,#007cc7 100%);
+			background: linear-gradient(to bottom, #0295ed 0%,#0295ed 51%,#007cc7 51%,#007cc7 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0295ed', endColorstr='#007cc7',GradientType=0 );
+		}
+		@else if $color == grey or $color == gray {
+			background: #ececec;
+			background: -moz-linear-gradient(top, #ececec 0%, #ececec 50%, #cacaca 50%, #cacaca 100%);
+			background: -webkit-linear-gradient(top, #ececec 0%,#ececec 50%,#cacaca 50%,#cacaca 100%);
+			background: linear-gradient(to bottom, #ececec 0%,#ececec 50%,#cacaca 50%,#cacaca 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#cacaca',GradientType=0 );
+		}
+	}//end of blue
+	@else if $state == hover {
+		background: #fe569a;
+		background: -moz-linear-gradient(top, #fe569a 0%, #fe569a 50%, #ee2375 50%, #ee2375 100%);
+		background: -webkit-linear-gradient(top, #fe569a 0%,#fe569a 50%,#ee2375 50%,#ee2375 100%);
+		background: linear-gradient(to bottom, #fe569a 0%,#fe569a 50%,#ee2375 50%,#ee2375 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe569a', endColorstr='#ee2375',GradientType=0 );
+	}//end of grey
+}//end of ButtonColorGradient mixin
+
+//************************MIXIN'S************************
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin box-shadow($hShadow, $vShadow, $blur, $color) {
+	-webkit-box-shadow: $hShadow $vShadow $blur $color;
+	-moz-box-shadow: $hShadow $vShadow $blur $color;
+	-ms-box-shadow: $hShadow $vShadow $blur $color;
+	box-shadow: $hShadow $vShadow $blur $color;
+}
+@mixin text-shadow($hShadow, $vShadow, $blur, $color) {
+	-webkit-text-shadow: $hShadow $vShadow $blur $color;
+	-moz-text-shadow: $hShadow $vShadow $blur $color;
+	-ms-text-shadow: $hShadow $vShadow $blur $color;
+	text-shadow: $hShadow $vShadow $blur $color;
+}
+
+//breakpoints (progressive enhancement)
+/* 760px (size we want) / 16 (16px = 1em) = 47.5em  For Tablet*/
+$tabletWidth: 47.5em;
+/* 1140px (size we want) / 16 (16px = 1em) = 71.25em For Desktop*/
+$desktopWidth: 71.25em;
+
+// @include breakpoint(desktop){}
+@mixin breakpoint($point) {
+	@if $point == desktop {
+		@media (min-width: $desktopWidth) { @content ; }
+	}
+	@else if $point == tablet {
+		@media (min-width: $tabletWidth) { @content ; }
+	}
+}
+
+/*----- Clearfix -----*/
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
