@@ -280,6 +280,22 @@ footer {
     .mainContent .searchList li:hover a {
       background-color: #e5dcf2;
       color: #7a9a95; }
+  .mainContent .searchResults {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding-right: 100px; }
+    .mainContent .searchResults h3 {
+      font-size: 1.3em;
+      color: #fa8b60;
+      padding: 1em 0; }
+    .mainContent .searchResults span {
+      color: #ef6d3b; }
+    .mainContent .searchResults a, .mainContent .searchResults a:visited, .mainContent .searchResults a:link {
+      color: #fa8b60;
+      transition: color .3s ease; }
+      .mainContent .searchResults a:hover, .mainContent .searchResults a:visited:hover, .mainContent .searchResults a:link:hover {
+        color: #90c5a9; }
 
 .mainForm {
   background-color: #3F2860;

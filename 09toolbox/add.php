@@ -1,27 +1,28 @@
 <?php
+require_once('connectvars.php');
+
 	if(isset($_POST['submit'])) {
 		//Get variables from the form
 		$title = $_POST['title'];
 		$director = $_POST['director'];
-		$rating = $_POST['rating'];
+		$rating = strtoupper($_POST['rating']);
 		$day = $_POST['day'];
 		$month = $_POST['month'];
 		$year = $_POST['year'];
 		$summary = $_POST['summary'];
 		
 		$movieDay = $day.'_'.$month.'_'.$year;
+
 		
 		//Connect to DB to add variables
-		require_once('connectvars.php');
 		$dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Connection failed');
 		
 		$query = "INSERT INTO watch_movie (title, director, movie_day, summary, rating) VALUES ('$title','$director','$movieDay','$summary', '$rating')";
 		
-		
 		echo $movieDay;
 		echo '<br>';
 		
-		$result = mysqli_query($dbconnection, $query) or die('Query Failed.');
+		$result = mysqli_query($dbconnection, $query) or die(' Query failed');
 		
 		mysqli_close($dbconnection);
 		header('Location: index.php');

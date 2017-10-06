@@ -148,6 +148,27 @@
 			background-color: $white;
 			color: $darkGreenColor;
 		}
+	}//end of searchList
+	.searchResults {
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		padding-right: 100px;
+		h3 {
+			font-size: 1.3em;
+			color: $lightOrangeColor;
+			padding: 1em 0;
+		}
+		span {
+			color: $orangeColor;
+		}
+		a, a:visited, a:link {
+			color: $lightOrangeColor;
+			transition: color .3s ease;
+			&:hover {
+				color: $greenColor;
+			}
+		}
 	}
 }//end of main content
 .mainForm {
