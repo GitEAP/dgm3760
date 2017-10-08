@@ -1,2 +1,9 @@
 @import 'reset';
 @import 'variables';
+@import 'default';
+//site specific
+@import 'header';
+@import 'nav';
+@import 'mainContentLayout';
+//page specific
+@import 'mainContent';

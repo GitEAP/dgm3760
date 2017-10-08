@@ -16,6 +16,8 @@ $yellowAccent: #ffde00;
 $pinkAccent: #ee2375;
 //Fig caption BG #58585a
 
+$containerWidth: 1140px;
+
 //************************GRADIENTS************************
 @mixin ButtonColorGradient($color, $state: normal) {
 	@if $state == normal {

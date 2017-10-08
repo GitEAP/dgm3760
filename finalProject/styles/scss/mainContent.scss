@@ -1,0 +1,128 @@
+//******************************Right side of main content******************************
+.mainContent {
+	.contentContainer {
+		.contentRight {}
+	}
+}
+//******************************END OF Right side******************************
+//******************************Left side of main Content ********************************
+.mainContent {
+	.contentContainer {
+		.contentLeft {
+			.sideBox {
+				text-align: center;
+				display: block;
+				background-color: $containerColor;
+				padding-bottom: 20px;
+				margin-top: 20px;
+				margin-right: 25px;
+				margin-left: 25px;
+				img {
+					width: 100%;
+					padding: 20px;
+				}
+				hr {
+					color: rgba(0,0,0,.2);
+					width: 80%;
+					margin: 0 auto;
+				}
+				p {
+					padding: 20px 0;
+					font-size: .8em;
+					color: $darkText;
+				}
+				button {
+					margin: 0px auto;
+					font-size: .8em;
+					font-weight: 700;
+					padding: .5em;
+					width: 85%;
+					display: block;
+					@include border-radius(5px);
+					transition: background-color .3s ease;
+				}
+				.button1 {
+					margin-top: 25px;
+					@include ButtonColorGradient(blue, normal);
+					border: 0;
+					color: #fff;
+					&:hover {
+						@include ButtonColorGradient(blue, hover);
+					}
+				}
+				.button2 {
+					margin-top: 20px;
+					@include ButtonColorGradient(grey, normal);
+					border: 1px solid black;
+					color: #000;
+					&:hover {
+						@include ButtonColorGradient(grey, hover);
+						border-color: transparent;
+						color: #fff;
+					}
+				}
+			}//end of sideBox
+			.sideBox2 {
+				display: block;
+				background-color: $containerColor;
+				padding: 1em .5em;
+				color: $mainText;
+				font-size: .8em;
+				line-height: 1.35em;
+				margin: 20px 25px 25px 25px;
+				a {
+					color: $mainText;
+					text-decoration: none;
+					&:hover {
+						color: $pinkAccent;
+					}
+				}
+			}//end of sidebox2
+			.socialIconsSide {
+				display: block;
+				text-align: center;
+				margin-top: 20px;
+				ul {}
+				li {
+					display: inline-block;	
+				}
+				a {
+					display: block;
+					font-size: 2em;
+					padding: .2em;
+					color: $mainText;
+					transition: color .3s ease;
+					&:hover {
+						color: $pinkAccent;
+					}
+				}	
+			}//end of social icons
+			
+		}//end of content Left
+	}
+}
+//******************************END OF Left side ********************************
+
+
+@include breakpoint(tablet) {
+.mainContent {
+	.contentContainer {
+		.contentLeft {
+			.sideBox {margin-left: 0px;}
+			.sideBox2 {margin-left: 0px; margin-bottom: 0;}
+			.socialIconsSide {
+				display: none;
+			}//end of social icons
+		}//end of left
+		.contentRight {}
+	}//end of contatiner
+}//end of main content
+}//end of tablet
+@include breakpoint(desktop) {
+.mainContent {
+	.contentContainer {
+		.contentLeft {}
+		.contentRight {}
+	}
+}
+}

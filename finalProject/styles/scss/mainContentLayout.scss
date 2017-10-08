@@ -1,0 +1,44 @@
+body {
+	background-color: $backgroundColor;
+}
+.mainContent {
+	width: 100%;
+	.contentContainer {
+		width: 100%;
+		padding-left: 2%;
+		padding-right: 2%;
+		margin-top: 200px;
+		.contentLeft {
+		}
+	}
+}
+@include breakpoint(tablet) {
+.mainContent {
+	background-color: $backgroundColor;
+	.contentContainer {
+		padding: 0;
+		width: $tabletWidth;
+		margin: 125px auto 0 auto;
+		.contentLeft {
+			width: 25%;
+			float: left;
+			background-color: $backgroundColor;
+			padding: 0px 0 10px 2%;
+		}
+		.contentRight {
+			width: 75%;
+			float: right;
+			background-color: $containerColor;
+			padding: 25px 4%;
+		}
+	}
+}
+}//end of Tablet
+@include breakpoint(desktop) {
+.mainContent {
+	.contentContainer {
+		margin-top: 150px;
+		width: $desktopWidth;
+	}
+}
+}//end of desktop
