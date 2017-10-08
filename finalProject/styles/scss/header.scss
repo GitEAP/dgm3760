@@ -1,0 +1,140 @@
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-image: url(../assets/body_stripes.png);
+	z-index: 1;
+	@include box-shadow(0,2px,5px,rgba(0,0,0,.4));
+
+	.headerColorBar {
+		display: block;
+		background: url(../assets/header_main_color_stripe_mobile.png);
+		height: 6px;
+		width: 100%;
+		background-repeat: repeat-x;
+		background-position: center;
+		z-index: 1;
+	}
+	.headerLeft {
+		width: 96%;
+		margin: 0 auto;
+		display: block;
+		text-align: center;
+		img {
+			width: 90px;
+		}
+		h1 {
+			display: inline;
+			position: relative;
+			top: -35px;
+			left: 0px;
+		}
+		.openbtn {
+			display: inline-block;
+			position: absolute;
+			top: 25px;
+			left: 25px;
+			font-size: 2.35em;
+			transition: color .3s ease;
+			&:hover {
+				color: $primaryColor;
+			}
+		}
+	}
+	.headerRight {
+		margin-top: 3px;
+		margin: 0 auto 30px auto;
+		display: block;
+		text-align: center;
+		.socialIcons {
+			display: none;
+		}
+		.searchBar {
+	
+			.searchField {
+				padding: .2em;
+				font-size: 1em;
+			}
+			.searchButton {
+				padding: .25em;
+				font-size: 1em;
+				position: relative;
+				top: -1px;
+				transition: background-color .3s ease;
+				border: 1px solid rgba(0,0,0,.25);
+				@include border-radius(5px);
+				@include ButtonColorGradient(grey, normal);
+				&:hover {
+					@include ButtonColorGradient(grey, hover);
+					color: #fff;
+				}
+			}
+		}//end of search bar
+	}//end of header right
+}
+
+@include breakpoint(tablet) {
+	header {
+		.headerColorBar {
+			background-image: url(../assets/header_main_color_stripe.png);
+		}
+		.headerContainer {
+			width: $tabletWidth;
+			display: block;
+			margin: 0 auto;
+		}
+		.headerLeft {
+			width: auto;
+			float: left;
+			.openbtn {
+				display: none;
+			}
+		}
+		.headerRight {
+			float: right;
+			width: auto;
+			margin-bottom: 0;
+			.socialIcons {
+				display: block;
+				ul {
+					float: right;
+				}
+				li {
+					display: inline-block;	
+				}
+				a {
+					display: block;
+					font-size: 1.3em;
+					padding: .2em;
+					color: $mainText;
+					transition: color .3s ease;
+					&:hover {
+						color: $primaryColor;
+					}
+				}
+			}//end of social Icons
+			.searchBar {
+				margin-top: 40px;
+				display: block;
+			}
+		}//end of header right
+	}
+	
+}//end of Tablet
+@include breakpoint(desktop) {
+	header {
+		.headerContainer {
+			width: $desktopWidth;
+		}	
+		.headerRight {
+			.searchBar {
+				.searchField {
+					width: 400px;
+				}
+			}
+		}//end of header right
+	}//end of header
+
+
+}
