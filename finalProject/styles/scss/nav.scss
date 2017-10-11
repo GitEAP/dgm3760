@@ -36,7 +36,7 @@
 				    padding: 8px 8px 8px 32px;
 					text-decoration: none;
 					font-size: 25px;
-					color: #818181;
+					color: $mainText;
 					display: block;
 					transition: 0.3s;
 					&:hover {
@@ -45,7 +45,13 @@
 					}
 					
 				}// end of a
-				
+				.linkName {
+					padding: 8px 8px 8px 32px;
+					text-decoration: none;
+					font-size: 25px;
+					color: $mainText;
+					display: block;
+				}
 			}//end of mainNav
 		}//end of content left
 	}//end of container
@@ -77,18 +83,24 @@
 					display: none;
 				}
 				a {
-					display: block;
+					
 					width: 100%;
 					border-bottom: 1px solid rgba(0,0,0,.1);
 					border-left: 1px solid rgba(0,0,0,.1);
-					text-decoration: none;
 					padding: .8em .6em .8em .8em;
 					font-size: 1.25em;
-					color: $mainText;
 					transition: background-color .3s ease, color .3s ease;
 					&:first-child {
 						border-top: 1px solid rgba(0,0,0,.1);
-					}
+					}	
+				}
+				.linkName {
+					width: 100%;
+					border-bottom: 1px solid rgba(0,0,0,.1);
+					border-left: 1px solid rgba(0,0,0,.1);
+					padding: .8em .6em .8em .8em;
+					font-size: 1.25em;
+					border-top: 1px solid rgba(0,0,0,.1);
 				}
 			}//end of mainNav
 		}//end of content left
