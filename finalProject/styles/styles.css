@@ -218,12 +218,18 @@ header {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
       font-size: 25px;
-      color: #818181;
+      color: #777;
       display: block;
       transition: 0.3s; }
       .mainContent .contentContainer .contentLeft .mainNav a:hover {
         background-color: #fff;
         color: #ee2375; }
+    .mainContent .contentContainer .contentLeft .mainNav .linkName {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #777;
+      display: block; }
 
 @media (min-width: 47.5em) {
   .mainContent .contentContainer .contentLeft {
@@ -240,17 +246,21 @@ header {
     .mainContent .contentContainer .contentLeft .mainNav .closebtn {
       display: none; }
     .mainContent .contentContainer .contentLeft .mainNav a {
-      display: block;
       width: 100%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       border-left: 1px solid rgba(0, 0, 0, 0.1);
-      text-decoration: none;
       padding: .8em .6em .8em .8em;
       font-size: 1.25em;
-      color: #777;
       transition: background-color .3s ease, color .3s ease; }
       .mainContent .contentContainer .contentLeft .mainNav a:first-child {
         border-top: 1px solid rgba(0, 0, 0, 0.1); }
+    .mainContent .contentContainer .contentLeft .mainNav .linkName {
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+      padding: .8em .6em .8em .8em;
+      font-size: 1.25em;
+      border-top: 1px solid rgba(0, 0, 0, 0.1); }
   .mainContent .contentContainer .contentRight {
     width: 75%;
     float: right;
@@ -288,6 +298,129 @@ body {
   .mainContent .contentContainer {
     margin-top: 150px;
     width: 71.25em; } }
+.mainContent .contentContainer .contentRight h2 {
+  font-size: 1.5em;
+  padding-bottom: .8em; }
+.mainContent .contentContainer .contentRight a {
+  color: #0079c2; }
+  .mainContent .contentContainer .contentRight a:hover {
+    color: #ee2375; }
+.mainContent .contentContainer .contentRight .mainForm, .mainContent .contentContainer .contentRight .commentForm {
+  margin: 30px 0; }
+  .mainContent .contentContainer .contentRight .mainForm label, .mainContent .contentContainer .contentRight .commentForm label {
+    display: block;
+    margin: .8em 0; }
+  .mainContent .contentContainer .contentRight .mainForm legend, .mainContent .contentContainer .contentRight .commentForm legend {
+    font-size: 1.2em;
+    padding: .5em 0; }
+  .mainContent .contentContainer .contentRight .mainForm fieldset, .mainContent .contentContainer .contentRight .commentForm fieldset {
+    margin: 1em 0; }
+  .mainContent .contentContainer .contentRight .mainForm span, .mainContent .contentContainer .contentRight .commentForm span {
+    font-size: .8em; }
+  .mainContent .contentContainer .contentRight .mainForm .formText, .mainContent .contentContainer .contentRight .commentForm .formText {
+    display: block;
+    width: 100%;
+    height: 300px;
+    font-family: "Arvo", serif;
+    padding: .4em .2em .4em .4em;
+    border: 1px solid #0079c2;
+    color: #39b54a; }
+    .mainContent .contentContainer .contentRight .mainForm .formText:focus, .mainContent .contentContainer .contentRight .commentForm .formText:focus {
+      border: 1px solid #ffde00; }
+  .mainContent .contentContainer .contentRight .mainForm .userInput, .mainContent .contentContainer .contentRight .commentForm .userInput {
+    margin: .2em 0;
+    width: 100%;
+    font-size: 1em;
+    padding: .4em .2em .4em .4em;
+    border: 1px solid #0079c2;
+    color: #39b54a; }
+    .mainContent .contentContainer .contentRight .mainForm .userInput:focus, .mainContent .contentContainer .contentRight .commentForm .userInput:focus {
+      border: 1px solid #ffde00; }
+  .mainContent .contentContainer .contentRight .mainForm .uploadText, .mainContent .contentContainer .contentRight .commentForm .uploadText {
+    display: block;
+    font-size: .8em;
+    padding: .5em 0; }
+  .mainContent .contentContainer .contentRight .mainForm .submitButton, .mainContent .contentContainer .contentRight .commentForm .submitButton {
+    display: inline-block;
+    font-size: 1.3em;
+    padding: .5em;
+    color: #fff;
+    border: 1px solid #0079c2;
+    transition: .3s;
+    background: #0295ed;
+    background: -moz-linear-gradient(top, #0295ed 0%, #0295ed 51%, #007cc7 51%, #007cc7 100%);
+    background: -webkit-linear-gradient(top, #0295ed 0%, #0295ed 51%, #007cc7 51%, #007cc7 100%);
+    background: linear-gradient(to bottom, #0295ed 0%, #0295ed 51%, #007cc7 51%, #007cc7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0295ed', endColorstr='#007cc7',GradientType=0 ); }
+    .mainContent .contentContainer .contentRight .mainForm .submitButton:hover, .mainContent .contentContainer .contentRight .commentForm .submitButton:hover {
+      background: #fe569a;
+      background: -moz-linear-gradient(top, #fe569a 0%, #fe569a 50%, #ee2375 50%, #ee2375 100%);
+      background: -webkit-linear-gradient(top, #fe569a 0%, #fe569a 50%, #ee2375 50%, #ee2375 100%);
+      background: linear-gradient(to bottom, #fe569a 0%, #fe569a 50%, #ee2375 50%, #ee2375 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe569a', endColorstr='#ee2375',GradientType=0 ); }
+.mainContent .contentContainer .contentRight .commentForm .formText {
+  height: 100px; }
+.mainContent .contentContainer .contentRight .commentForm .submitButton {
+  font-size: 1em;
+  padding: .3em; }
+.mainContent .contentContainer .contentRight .contentRecord {
+  background-color: #f5f5f5;
+  margin-bottom: 50px; }
+  .mainContent .contentContainer .contentRight .contentRecord .contentComment h3 {
+    font-size: 1em;
+    padding: .5em .4em; }
+  .mainContent .contentContainer .contentRight .contentRecord .contentComment span {
+    font-size: .5em; }
+  .mainContent .contentContainer .contentRight .contentRecord .contentComment p {
+    font-size: .8em;
+    padding: .5em .4em 1.5em .8em; }
+  .mainContent .contentContainer .contentRight .contentRecord .RecordColumn1 {
+    width: 100%; }
+    .mainContent .contentContainer .contentRight .contentRecord .RecordColumn1 img {
+      width: 40%;
+      margin: 0 auto;
+      display: block; }
+  .mainContent .contentContainer .contentRight .contentRecord .RecordColumn2 {
+    width: 100%;
+    padding: 10px 1% 15px 1%;
+    text-align: center; }
+    .mainContent .contentContainer .contentRight .contentRecord .RecordColumn2 h3 {
+      font-size: 1.5em; }
+    .mainContent .contentContainer .contentRight .contentRecord .RecordColumn2 span {
+      color: #999;
+      font-size: .75em;
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 2.5em; }
+    .mainContent .contentContainer .contentRight .contentRecord .RecordColumn2 p {
+      font-size: 1em; }
+    .mainContent .contentContainer .contentRight .contentRecord .RecordColumn2 a {
+      text-decoration: none; }
+    .mainContent .contentContainer .contentRight .contentRecord .RecordColumn2 .searchTitle {
+      color: #ffde00;
+      display: inline;
+      font-size: 1em; }
+.mainContent .contentContainer .contentRight .feedback, .mainContent .contentContainer .contentRight .feedbackError {
+  display: block;
+  background-color: #39b54a;
+  padding: .5em .3em;
+  color: #fff; }
+.mainContent .contentContainer .contentRight .feedbackError {
+  background-color: #ee2375; }
+.mainContent .contentContainer .linkButton {
+  display: inline-block;
+  margin: 20px 0;
+  border: 1px solid #0079c2;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 1em;
+  padding: .4em;
+  text-decoration: none; }
+  .mainContent .contentContainer .linkButton:hover {
+    border-color: #ee2375; }
+
 .mainContent .contentContainer .contentLeft .sideBox {
   text-align: center;
   display: block;
@@ -307,13 +440,14 @@ body {
     padding: 20px 0;
     font-size: .8em;
     color: #464646; }
-  .mainContent .contentContainer .contentLeft .sideBox button {
+  .mainContent .contentContainer .contentLeft .sideBox .button1, .mainContent .contentContainer .contentLeft .sideBox .button2 {
     margin: 0px auto;
     font-size: .8em;
     font-weight: 700;
     padding: .5em;
     width: 85%;
     display: block;
+    text-decoration: none;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -386,4 +520,15 @@ body {
     margin-left: 0px;
     margin-bottom: 0; }
   .mainContent .contentContainer .contentLeft .socialIconsSide {
-    display: none; } }
+    display: none; }
+
+  .mainContent .contentContainer .contentRight .contentRecord .RecordColumn1 {
+    float: left;
+    width: 30%; }
+    .mainContent .contentContainer .contentRight .contentRecord .RecordColumn1 img {
+      width: 100%; }
+  .mainContent .contentContainer .contentRight .contentRecord .RecordColumn2 {
+    float: left;
+    width: 70%;
+    padding: 10px 2% 15px 2%;
+    text-align: left; } }
