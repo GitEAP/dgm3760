@@ -1,9 +1,152 @@
 //******************************Right side of main content******************************
 .mainContent {
 	.contentContainer {
-		.contentRight {}
-	}
-}
+		.contentRight {
+			h2 {
+				font-size: 1.5em;
+				padding-bottom: .8em;
+			}
+			a {
+				color: $primaryColor;
+				&:hover {color: $pinkAccent;}
+			}
+			.mainForm {
+				margin: 30px 0;
+				label {
+					display: block;
+					margin: .8em 0;
+				}
+				legend {
+					font-size: 1.2em;
+					padding: .5em 0;
+				}
+				fieldset {
+					margin: 1em 0;
+				}
+				span {
+					font-size: .8em;
+				}
+				.formText {
+					display: block;
+					width: 100%;
+					height: 300px;
+					font-family: $bodyFont;
+					padding: .4em .2em .4em .4em;
+					border: 1px solid $primaryColor;
+					color: $greenAccent;
+					&:focus {border: 1px solid $yellowAccent;}
+				}
+				.userInput {
+					margin: .2em 0;
+					width: 100%;
+					font-size: 1em;
+					padding: .4em .2em .4em .4em;
+					border: 1px solid $primaryColor;
+					color: $greenAccent;
+					&:focus {border: 1px solid $yellowAccent;}
+				}
+				.uploadText {
+					display: block;
+					font-size: .8em;
+					padding: .5em 0;
+				}
+				.submitButton {
+					display: inline-block;
+					font-size: 1.3em;
+					padding: .5em;
+					color: #fff;
+					border: 1px solid $primaryColor;
+					transition: .3s;
+					@include ButtonColorGradient(blue, normal);
+					&:hover {@include ButtonColorGradient(blue, hover);}
+				}
+			}//end of mainForm
+			.commentForm{
+				@extend .mainForm;
+				.formText {
+					height: 100px;
+				}
+				.submitButton {
+					font-size: 1em;
+					padding: .3em;
+				}
+			}
+			.contentRecord {
+				background-color: $contentBGColor;
+				margin-bottom: 50px;
+				.contentComment {
+					h3 {
+						font-size: 1em;
+						padding: .5em .4em;
+					}
+					span {
+						font-size: .5em;
+					}
+					p {
+						font-size: .8em;
+						padding: .5em .4em 1.5em .8em;
+					}
+				}
+				.RecordColumn1 {
+					width: 100%;
+					img {
+						width: 40%;
+						margin: 0 auto;
+						display: block;
+					}
+				}//end of record column
+				.RecordColumn2 {
+					width: 100%;
+					padding: 10px 1% 15px 1%;
+					text-align: center;
+					h3 {
+						font-size: 1.5em;
+					}
+					span {
+						color: $lightText;
+						font-size: .75em;
+						display: block;
+						margin-top: 5px;
+						margin-bottom: 2.5em;
+					}
+					p {
+						font-size: 1em;
+					}
+					a {
+						text-decoration: none;
+					}
+					.searchTitle {
+						color: $yellowAccent;
+						display: inline;
+						font-size: 1em;
+					}
+				}
+			}//end of content record
+			.feedback {
+				display: block;
+				background-color: $greenAccent;
+				padding: .5em .3em;
+				color: #fff;
+			}
+			.feedbackError {
+				@extend .feedback;
+				background-color: $pinkAccent;
+			}
+		}//end of contentRight
+		.linkButton {
+			display: inline-block;
+			margin: 20px 0;
+			border: 1px solid $primaryColor;
+			@include border-radius(5px);
+			font-size: 1em;
+			padding: .4em;
+			text-decoration: none;
+			&:hover {
+				border-color: $pinkAccent;
+			}
+		}
+	}//end of container
+}//end of maincontent
 //******************************END OF Right side******************************
 //******************************Left side of main Content ********************************
 .mainContent {
@@ -31,17 +174,19 @@
 					font-size: .8em;
 					color: $darkText;
 				}
-				button {
+				%sideBtns {
 					margin: 0px auto;
 					font-size: .8em;
 					font-weight: 700;
 					padding: .5em;
 					width: 85%;
 					display: block;
+					text-decoration: none;
 					@include border-radius(5px);
 					transition: background-color .3s ease;
 				}
 				.button1 {
+					@extend %sideBtns;
 					margin-top: 25px;
 					@include ButtonColorGradient(blue, normal);
 					border: 0;
@@ -51,6 +196,7 @@
 					}
 				}
 				.button2 {
+					@extend %sideBtns;
 					margin-top: 20px;
 					@include ButtonColorGradient(grey, normal);
 					border: 1px solid black;
@@ -102,8 +248,6 @@
 	}
 }
 //******************************END OF Left side ********************************
-
-
 @include breakpoint(tablet) {
 .mainContent {
 	.contentContainer {
@@ -117,6 +261,29 @@
 		.contentRight {}
 	}//end of contatiner
 }//end of main content
+	//******************************Right side of main content******************************
+.mainContent {
+	.contentContainer {
+		.contentRight {
+			.contentRecord {
+				.RecordColumn1 {
+					float: left;
+					width: 30%;
+					img {
+						width: 100%;
+					}
+				}//end of record column
+				.RecordColumn2 {
+					float: left;
+					width: 70%;
+					padding: 10px 2% 15px 2%;
+					text-align: left;
+				}
+			}//end of content record
+		}//end of contentRight
+	}//end of container
+}//end of maincontent
+//******************************End of Right side of main content******************************
 }//end of tablet
 @include breakpoint(desktop) {
 .mainContent {
