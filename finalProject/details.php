@@ -88,7 +88,7 @@ function numStars ($stars) {
 																	
 <?php
 				//DISPLAY ALL COMMENTS			
-			$queryCommentJoins = "SELECT * FROM ((final_comments INNER JOIN final_movie ON final_comments.movie_id = final_movie.id) INNER JOIN final_user ON final_comments.user_id = final_user.user_id) WHERE movie_id=$movie_id ORDER BY date";
+			$queryCommentJoins = "SELECT * FROM ((final_comments INNER JOIN final_movie ON final_comments.movie_id = final_movie.id) INNER JOIN final_user ON final_comments.user_id = final_user.user_id) WHERE movie_id=$movie_id ORDER BY date DESC";
 			
 			$resultComments = mysqli_query($dbconnection, $queryCommentJoins) or die('Comment Query failed');
 
